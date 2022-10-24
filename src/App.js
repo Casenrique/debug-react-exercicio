@@ -1,43 +1,45 @@
 import React from 'react';
-import CardGrande from './components/CardGrande';
+import './index.css';
+import CardGrande  from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
-import styled, { createGlobalStyle } from 'styled-components'
-import imagemPerfil from "./img/DP-Brock.png"
-import { CardPequeno } from './component/CardPequeno';
-import downArrow from "./img/down-arrow.png"
-import iconePedra from "./img/rock-symbol.jpg"
-import iconeEstadio from "./img/pewter-gym.jpg"
-import iconeEmail from "./img/email"
-import iconePin from "../img/pin-endereco.png"
-import iconeFB from "./img/facebook-logo-3.png"
-import iconeTT from "./img/twitter-logo-1-1.png"
+import styled, { createGlobalStyle } from 'styled-components';
+import imagemPerfil from "./img/DP-Brock.png";
+import CardPequeno  from './components/CardPequeno/CardPequeno';
+import downArrow from "./img/down-arrow.png";
+import iconePedra from "./img/rock-symbol.jpg";
+import iconeEstadio from "./img/pewter-gym.jpg";
+import iconeEmail from "./img/email.png";
+import iconePin from "./img/pin-endereco.png";
+import iconeFB from "./img/facebook-logo-3.png";
+import iconeTT from "./img/twitter-logo-1-1.png";
 
 const GlobalStyle = createGlobalStyle`
-    *{
+* {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
-    }`
+}
+`
 
 const ContainerApp = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
-  `
+`
 
 const SectionPagina = styled.section`
     width: 40vw;
     margin: 10px 0;
-  `
+`
 
 const Titulos = styled.h2`
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-  `
+`
 
-function App() {
+export default function App() {
   const perfil = {
     nome: "Brock",
     imagem: imagemPerfil,
@@ -64,11 +66,11 @@ function App() {
       <SectionPagina>
         <Titulos>Dados pessoais</Titulos>
         <CardGrande
-          imagem={perfil.image}
+          imagem={perfil.imagem}
           nome={perfil.nome}
           descricao={perfil.descricao}
         />
-
+-
         <ImagemButton
           imagem={downArrow}
           texto="Ver mais"
@@ -79,14 +81,14 @@ function App() {
         <CardPequeno
           imagem={iconeEmail}
           nome="E-mail:"
-          descricao={perfil}
+          descricao={perfil.email}
         />
       </SectionPagina>
       <SectionPagina>
         <CardPequeno
-          image={iconePin}
-          name="Cidade:"
-          description={perfil.cidade}
+          imagem={iconePin}
+          nome="Cidade:"
+          descricao={perfil.cidade}
         />
       </SectionPagina>
 
@@ -94,14 +96,14 @@ function App() {
       <SectionPagina>
         <Titulos>Experiências profissionais</Titulos>
         <CardGrande
-          imagem={perfil.experiencia.icone}
-          nome={perfil.experiencia.empresa}
-          descricao={perfil.experiencia.descricao}
+          imagem={perfil.experiencia[0].icone}
+          nome={perfil.experiencia[0].empresa}
+          descricao={perfil.experiencia[0].descricao}
         />
 
         <CardGrande
-          image={perfil.experiencia[1].icone}
-          name={perfil.experiencia[1].empresa}
+          imagem={perfil.experiencia[1].icone}
+          nome={perfil.experiencia[1].empresa}
           descricao={perfil.experiencia[1].descricao}
         />
       </SectionPagina>
@@ -109,11 +111,11 @@ function App() {
       <SectionPagina>
         <Titulos>Minhas redes sociais</Titulos>
         <ImagemButton
-          imagem="./img/facebook-logo-3.png"
+          imagem={iconeFB}
           texto="Facebook"
         />
         <ImagemButton
-          imagem="./img/twitter-logo-1-1.png"
+          imagem={iconeTT}
           texto="Twitter"
         />
       </SectionPagina>
@@ -121,4 +123,4 @@ function App() {
   );
 }
 
-export default App;
+

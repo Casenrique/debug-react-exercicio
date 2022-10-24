@@ -2,9 +2,7 @@ import React from 'react';
 // import './ImagemButton.css'
 import styled from 'styled-components'
 
-function ImagemButton(props) {
-
-    const ContainerImagemVerMais = styled.div`
+const ContainerImagemVerMais = styled.div`
     display: flex;
     align-items: center;
     border: 1px solid black;
@@ -12,12 +10,15 @@ function ImagemButton(props) {
     width: 200px;
     padding: 15px 30px;
     margin: 10px auto;
-    `
+`
 
-    const ImgVerMais = styled.img`
+const ImgVerMais = styled.img`
     width: 30px;
     margin-right: 10px;
-    `
+`
+
+function ImagemButton(props) {
+
 
     return (
         <ContainerImagemVerMais>
